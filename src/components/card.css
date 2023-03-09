@@ -1,0 +1,29 @@
+.card {
+  width: 100%;
+  box-shadow: 2px 2px 6px #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.image-container {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  transition: 0.5s;
+}
+.name {
+  margin: 5px 10px;
+}
+.price {
+  font-weight: bold;
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+.price-symbol {
+  margin-left: 3px;
+}
