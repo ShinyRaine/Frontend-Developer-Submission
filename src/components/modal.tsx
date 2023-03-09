@@ -1,4 +1,4 @@
-import { ReactHTMLElement, useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { ItemData } from '../type/item'
 import './modal.css'
 import closeIcon from '../assets/close_icon.svg'
@@ -20,11 +20,15 @@ const Modal = (props: propsType) => {
     if(!maskElement.current) return
     if(visible) {
       const top = document.documentElement.scrollTop
-      topRef.current = top
+      topRef.current = top 
+
+      // handle scrolling
       document.body.classList.add('fixed-body')
       document.body.style.top = `-${top}px`
+
       modalElement.current.style.display = 'block'
       modalElement.current.style.top = `${top + 100}px`
+
       maskElement.current.style.display = 'block'
       maskElement.current.style.top = `${top}px`
     } else {
@@ -32,12 +36,12 @@ const Modal = (props: propsType) => {
       modalElement.current.style.display = 'none'
       maskElement.current.style.display = 'none'
       document.documentElement.scrollTop = topRef.current
-
     }
   }, [visible])
 
   const handleClickBuyButton = useCallback(() => {
     if(!data) return
+    // link to opensea
     window.open(`https://opensea.io/assets/ethereum/${data.assetAddress}/${data.tokenId}`, 'tab')
   }, [data])
 

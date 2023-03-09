@@ -15,8 +15,12 @@ function App() {
   }, [])
 
   const getList = async () => {
+    
+    // need to request data here
+    // init mock data
     setNftList(mockdata)
   }
+
   const handleCardClick = useCallback((node: ItemData) => {
     setActiveNode(node)
     setModalVisible(true)
